@@ -4,23 +4,21 @@ import ListItem from "../ListItem";
 
 function ShowList({ list, tickItem, setList }) {
   //function for deleting
-  function handleDeleteClick(id) {
-    console.log(id);
-    id = id - 1;
-    setList([...list.slice(0, id), ...list.slice(id + 1)]);
+  function handleDeleteClick(index) {
+    console.log(index);
+    setList([...list.slice(0, index), ...list.slice(index + 1)]);
   }
 
   return (
     <ol>
-      {list.map((listItem) => (
+      {list.map((listItem, index) => (
         <ListItem
           name={listItem.item}
           completed={listItem.completed}
           key={listItem.id}
           tickItem={() => tickItem(listItem.id)}
-          deleteClick={() => {
-            handleDeleteClick(listItem.id);
-          }}
+          deleteClick={handleDeleteClick}
+          id={index}
         />
       ))}
     </ol>
