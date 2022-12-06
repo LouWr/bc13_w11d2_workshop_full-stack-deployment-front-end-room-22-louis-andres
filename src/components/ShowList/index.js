@@ -18,7 +18,7 @@ function ShowList({ list, tickItem, setList }) {
           key={listItem.id}
           tickItem={() => tickItem(listItem.id)}
           deleteClick={handleDeleteClick}
-          id={index}
+          index={index}
         />
       ))}
     </ol>

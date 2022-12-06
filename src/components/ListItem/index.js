@@ -2,7 +2,7 @@
 import React from "react";
 import "./listItem.css";
 
-function ListItem({ name, completed, tickItem, deleteClick, id }) {
+function ListItem({ name, completed, tickItem, deleteClick, index }) {
   return (
     <div className="list-items">
       <li
@@ -15,7 +15,7 @@ function ListItem({ name, completed, tickItem, deleteClick, id }) {
       <button
         className="del-button"
         onClick={() => {
-          deleteClick(id);
+          deleteClick(index);
         }}
       >
         Delete
