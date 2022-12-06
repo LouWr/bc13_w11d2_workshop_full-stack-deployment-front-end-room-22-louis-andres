@@ -68,6 +68,7 @@ function App() {
 
   return (
     <section>
+      <h1>TEST</h1>
       <InputList addToList={addToList} buttonText={"Add To List"} />
       <ShowList list={list} tickItem={tickItem} />
       <ClearList clearList={clearList} buttonText={"Clear List"} />
