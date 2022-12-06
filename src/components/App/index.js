@@ -8,7 +8,7 @@ and clear all of the items in a list.
 2. In order for the components to interact with one another, some functionality will need to be hoisted into the App component
  */
 
-const url = process.env.REACT_APP_BACKEND_URL; //??
+const url = process.env.REACT_APP_BACKEND_URL;
 // "https://shopping-list-back-end.onrender.com";
 console.log(url);
 
@@ -68,9 +68,8 @@ function App() {
 
   return (
     <section>
-      <h1>TEST</h1>
       <InputList addToList={addToList} buttonText={"Add To List"} />
-      <ShowList list={list} tickItem={tickItem} />
+      <ShowList list={list} tickItem={tickItem} setList={setList} />
       <ClearList clearList={clearList} buttonText={"Clear List"} />
     </section>
   );

@@ -1,17 +1,27 @@
 //This is the component which shows each individual list item.
-
 import React from "react";
 import "./listItem.css";
 
-function ListItem({ name, completed, tickItem }) {
+function ListItem({ name, completed, tickItem, deleteClick }) {
   return (
-    <li
-      data-testid="list-item"
-      className={completed ? "tickedItem" : "untickedItem"}
-      onClick={tickItem}
-    >
-      {name}
-    </li>
+    <div className="list-items">
+      <li
+        data-testid="list-item"
+        className={completed ? "tickedItem" : "untickedItem"}
+        onClick={tickItem}
+      >
+        {name}
+      </li>
+      <button
+        className="del-button"
+        onClick={() => {
+          deleteClick();
+        }}
+        id={ListItem.id}
+      >
+        Delete
+      </button>
+    </div>
   );
 }
 
